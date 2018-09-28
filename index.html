@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <title>Story Builder</title>
+    </head>
+    <body>
+      <nav class="sidebar"><h1><a href="index.html">Book Overviews</a></h1></nav>
+      <header>
+        <h1><a href="index.html">Story Builder</a></h1>
+        <button class="nav-menu" type="button" name="menu-button">Menu</button>
+      </header>
+        <main>
+          <section class="book_Add">
+            <label for="book_New">Add a new book:</label>
+            <input id="book_New-Title" type="text" name="book_New" placeholder="Add a new book">
+            <a href="index.html"><button id="book_Add" type="button" name="bookInfo">+</button></a>
+          </section>
+          <div id="book_List">
+            <section class="book_Info">
+              <p>Adventures in Web Dev</p>
+              <a href="bookView.html"><button type="button" name="book_Id-View">View</button></a>
+            </section>
+            <section class="book_Info">
+              <p>Journey to the center of Javascript</p>
+              <a href="bookView.html"><button type="button" name="book_Id-View">View</button></a>
+            </section>
+            <section class="book_Info">
+              <p>Book 1</p>
+              <a href="bookView.html"><button type="button" name="book_Id-View">View</button></a>
+            </section>
+            <section class="book_Info">
+              <p>Book 2</p>
+              <a href="bookView.html"><button type="button" name="book_Id-View">View</button></a>
+            </section>
+            <section class="book_Info">
+              <p>Book 3</p>
+              <a href="bookView.html"><button type="button" name="book_Id-View">View</button></a>
+            </section>
+          </div>
+        </main>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/userData/localStorage.js"></script>
+    </body>
+</html>
