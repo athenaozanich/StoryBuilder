@@ -1,8 +1,6 @@
 
 //Create data Arrays for storing user info//
 let bookTitlesAsArr = [];
-//Get local storage items//
-bookTitlesAsArr = JSON.parse(localStorage.getItem('bookTitles'));
 
 //Get page elements//
 const newBookTitle = document.getElementById("book_New-Title");
@@ -20,9 +18,12 @@ urlQuery = urlQuery.split("=");
 
 //Start logic//
 const displayUserData = function() {
-  if (fileName === "index.html") {
-    //Check for an empty value//
-    if (bookTitlesAsArr !== null) {
+  if (localStorage.getItem('bookTitles') !== null) {
+      //Get local storage items//
+      bookTitlesAsArr = JSON.parse(localStorage.getItem('bookTitles'));
+
+    //Check page url//
+    if (fileName === "index.html") {
       //Display Book Titles//
       let book_Instance = ``;
       for (var i = 0; i < bookTitlesAsArr.length; i++) {
@@ -33,10 +34,10 @@ const displayUserData = function() {
 
         $('#book_List').html(book_Instance);
       }
+    }else if (fileName!== "index.html" && urlQuery[0]==="book_Elements") {
+      let book_Elements =  `<a href="bookView.html"><h2>${bookTitlesAsArr[urlQuery[1]]}</h2></a>`;
+        $('#current_Book').html(book_Elements);
     }
-  }else if (fileName!== "index.html" && urlQuery[0]==="book_Elements") {
-    let book_Elements =  `<a href="bookView.html"><h2>${bookTitlesAsArr[urlQuery[1]]}</h2></a>`;
-      $('#current_Book').html(book_Elements);
   }
 
 }
@@ -50,9 +51,9 @@ document.addEventListener("DOMContentLoaded", function() {
     //Set user Book Title to local storage//
     bookTitlesAsArr.push(newBookTitle.value);
     localStorage.setItem('bookTitles', JSON.stringify(bookTitlesAsArr));
-    console.log(bookTitlesAsArr[0]);
+    console.log(newBookTitle.value);
     //Alert user of saved changes//
-    alert(`Your book title "V" was saved!`);
+    alert(`Your book title "${newBookTitle.value}" was saved!`);
 
   });
 
