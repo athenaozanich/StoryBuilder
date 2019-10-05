@@ -81,6 +81,7 @@ button {
   justify-self:center;
   color: darkgray;
   font-family: 'Lora', serif;
+  transition: all .5s ease-in-out;
 }
 button:active{
   background-color: hsla(196, 63%, 45%, 0.25) ;
@@ -88,6 +89,11 @@ button:active{
   border: 1.5px solid #1e6c89;
   text-shadow: 0px 0px 5px black;
 }
+
+button:hover {
+  transform: scale(1.1);
+}
+
 section{
   border-bottom:0.5px solid #262626;
   height: 100%;
